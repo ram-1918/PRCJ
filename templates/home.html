@@ -1,0 +1,54 @@
+{% extends 'banner.html' %}
+{% load static %}
+{% block content %} 
+<head>
+        <!-- <link href="{% static 'css/style1.css' %}" rel="stylesheet" type="text/css" media="screen"> -->
+        <link rel = "stylesheet" type = 'text/css' href = 'static/css/style2.css' >
+        <script>
+        function click_active(val){
+                document.getElementById(val).style.val = 'active';
+                }
+        </script>
+</head>
+<div class = "title">
+        <h2> Models You desire </h2>
+        <p style = 'font-family: fantasy'> Jewelry is a prefect spice,</p>
+        <p style = 'font-family: fantasy'>it always complements what is already there.</p>
+</div>
+<div class="models" id="models" >
+        <div class="haramsec" id="haramsec">
+                <div class="haramimg"> <img src="{% static '/images/haram.jpg'%}" width='100%' height='620px'></div>
+                        <form action="haramfunc">
+                                <div class="harambutt"><button type="submit">VIEW MORE</button></div>
+                        </form>
+                        <div id="torch"></div>
+        </div>
+
+        <div class="chainsec" id="chainsec">
+                <div class="chainimg"> <img src="{% static 'images/chains.jpg'%}" width='100%' height='620px'></div>
+                        <form action="chainfunc">
+                                <div class="chainbutt"><button type="submit">VIEW MORE</button></div>
+                        </form>
+                        <div id="torch2"></div>
+        </div>
+        <div class="inner" >
+                <div class="banglesec" id="banglesec">
+                        <div class="bangleimg"><img src="{% static 'images/bangle.jpg'%}" width='100%' height='300px'></div>
+                                <form action="banglefunc">
+                                        <div class="banglebutt"><button type="submit">VIEW MORE</button></div>
+                                </form>
+                                <div id="torch3"></div>
+                </div>
+                <div class="necklacesec" id="necklacesec">
+                        <div class="necklaceimg"><img src="{% static 'images/necklace.jpg'%}" width='100%' height='300px'></div>
+                                <form action="necklacefunc">
+                                        <div class="necklacebutt"><button type="submit">VIEW MORE</button></div>
+                                </form>
+                                <div id="torch4"></div>
+                </div>
+        </div>
+
+
+ </div>
+{% endblock %}
+

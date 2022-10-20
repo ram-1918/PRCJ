@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<head>
+    <style>
+        #err{
+            color:red;
+            font-size:15px;
+        }
+        #err1{
+            color:red;
+            font-size:15px;
+        }
+    </style>
+</head>
+<form action="register" method="POST" class="form" autocomplete="off">
+    {% csrf_token %}
+
+<span>Register Here</span>
+   {% if usernameerr %}<p><input type="text" placeholder="Name" name="username" value={{username}}></p> <span id="err">{{usernameerr}} {% else %}<p><input type="text" placeholder="Name" name="username"></p>{% endif %}</span>
+
+   <p> <input type="password" placeholder="Password" name="password1"></p><span id="err1">{% if passworderr %}{{passworderr}}{% endif %}</span>
+   <p> <input type="password" placeholder="Confirm Password" name="password2"></p>
+    <button type="submit">REGISTER</button>
+</form>
+
+{% endblock %}
