@@ -1,0 +1,505 @@
+.topnav{
+    border-bottom:1px solid red;
+    padding:25px;
+    background-color: #ffffff;
+    font-family:Arial, Helvetica, sans-serif;
+    position:fixed;
+    width:100%;
+    text-decoration:none;
+    overflow: hidden;
+}
+#logo{
+    font-size:30px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif  ;
+    color:rgba(138, 4, 4, 0.986);
+    font-weight: bold;
+    text-shadow:1px 1px;
+    text-decoration: none;
+}
+.topnav a{
+    text-decoration: none;
+    color:black;
+    padding:25px 15px;
+    font-size: 15px;
+    float:left;
+}
+#ele:hover{
+    color:rgba(80, 12, 12, 0.856);
+    transition:0.5s;
+    opacity:0.7;
+    border-bottom:5px ridge rgba(163, 4, 4, 0.418);
+    text-decoration: none;
+}
+#topnav{
+    transition: 0.8s;
+    background: rgba(253, 253, 250, 0.986);
+    cursor:pointer;
+}
+.body{
+    padding:180px;
+    padding-top:120px;
+    overflow:hidden;
+    background-color: white;
+}
+.topnav .topnavin{
+    padding-left: 160px;
+    padding-right: 180px;
+}
+.models{
+    display:flex;
+    background-color: white;
+}
+.banglesec{
+    position: relative;
+    width: 300px;
+    height: 350px;
+    margin:10px;
+   }
+.harams{
+    position:relative;
+    width:800px;
+    height:350px;
+    margin:10px;
+    text-align:center;
+    background-color:white;
+    border:1px solid red;
+    border-radius:5px;
+}
+.harams p{
+    font-size:50px;
+    font-family:'Times New Roman', Times, serif;
+}
+.banglesec div{
+    position: absolute;
+    top:130px;
+    left:80px;
+    color: white;
+    margin-bottom: 5px;
+    font-family: sans-serif;
+    opacity: 0;
+    visibility: hidden;
+   }
+   .harams div{
+    position: absolute;
+    top:250px;
+    left:80%;
+    color: white;
+    margin-bottom: 5px;
+    font-family: sans-serif;
+    opacity: 0;
+    visibility: hidden;
+   }
+   
+.banglesec:hover, .harams:hover{
+    cursor: pointer;
+   }
+   
+.banglesec:hover div, .harams:hover div{
+    width: 150px;
+    padding: 8px 15px;
+    visibility: visible;
+    opacity: 0.8; 
+    color:black
+   }
+
+.banglesec:hover div button, .harams:hover div button{
+    font-size: 15px;
+    padding:10px;
+    background-color:navajowhite;
+    color:black;
+    border-radius:5px;
+   }
+.banglesec:hover div button:hover, .harams:hover div button:hover{
+       font-size:16px;
+       transition:0.7s;
+   }
+.haram_layout{
+    display:flex;
+    flex-wrap: wrap;
+    border-radius:10px;
+    margin-left:150px;
+    position:relative;
+    background-color: red;
+}
+.haram_layout .haramin_layout{
+       margin:10px;
+       background-color: #e9e3e3;
+       width:25%;
+       height:350px;
+       border:1px ridge darkgrey;
+       border-radius:10px;
+       box-shadow: 3px 3px;
+       text-align: center;
+       box-shadow: #ffffff;
+       position:relative;
+       cursor:pointer;
+     }
+
+.haramin_layout .imgcode{
+    position:absolute;
+    bottom:0;
+    left:90px;
+    color:rgb(155, 66, 3);
+    font-size: 17px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.haramin_layout:hover img{
+    width:87%;
+    height:87%;
+    transition:0.8s;
+
+}
+
+
+
+
+
+
+@media screen and (max-width: 800px)  {
+    .topnav .elements{
+        visibility: hidden;
+    }
+    .topnav .icon{
+        display:block;
+        position:absolute;
+        top:0;
+        right:26px;
+        padding:25px;
+        visibility: visible;
+        font-size:large;
+        color:rgba(138, 4, 4, 0.986);
+    }
+    .fullbodybar{
+        opacity:0.9;
+    }
+    .fullbodybar .topnav{
+        visibility: hidden;
+       }
+    .fullbodybar .icon{
+visibility: hidden;
+    }
+    .fullbodybar .logo{
+visibility: hidden;
+    }
+    .fullbodybar .after{
+        width:50%;
+        height:100%;
+        z-index:2;
+        position: fixed;
+        overflow: hidden;
+        top:0;
+        right:0;
+        transition: 0.8s ease-in-out;
+    
+    }
+    .fullbodybar .after .afterbody{
+        padding:10px;
+    }
+    .fullbodybar .after .newelements a{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width:100%;
+        padding:8px;
+        text-decoration: none;
+        color:black;
+        float:left;
+    }
+    .fullbodybar .after .newelements a:hover{
+        color:rgba(173, 152, 57, 0.986);
+        transition:0.7s;
+    }
+    .fullbodybar .after .newlogo{
+        background-color: white;
+        width:100%;
+        height:50px;
+        border-bottom: 1px solid lightgray;
+
+    }
+    .fullbodybar .after .newlogo a{
+        float: left;
+    padding:10px;    
+    font-size:20px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif  ;
+    color:rgba(138, 4, 4, 0.986);
+    font-weight: bold;
+    text-shadow:1px 1px;
+    text-decoration: none;
+    }
+    .fullbodybar .newicon{
+        position: absolute;
+        top:15px;
+        right:10px;
+        padding:10px;
+        font-size: 20px;
+        font-weight: lighter;
+        color:rgba(138, 4, 4, 0.986);
+        
+    }
+   
+    .fullbodybar .newicon i{
+        transition: 0.8s;
+        transform: rotate(-90deg);
+    }
+    .fullbodybar .newicon i:hover{
+        transition: 0.8s;
+        transform: rotate(90deg);
+    }
+
+
+
+
+    .topnav .logo a{
+        padding-left:8%;
+        text-decoration: none;
+    }
+
+ 
+    #models{
+        visibility: visible;    
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color:white;
+        width:65%;
+        position: absolute;
+        left:16%;
+    }
+
+  }
+  
+@media screen and (min-width: 800px) and (max-width:1000px) {
+    #models{
+        visibility: visible;    
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color:white;
+        width:65%;
+        position: absolute;
+        left:16%;
+    }
+    #innerlayout{
+        margin-bottom: 20px;
+        background-color:white;
+        width:50%;
+        height:350px;
+    }
+}
+@media screen and (max-width: 320px) {
+
+    .topnav .icon{
+        display:block;
+        position:absolute;
+        top:0;
+        right:4px;
+        padding:25px;
+        visibility: visible;
+        font-size:large;
+        color:rgba(138, 4, 4, 0.986);
+    }
+    .topnav .logo a{
+        left:10px;
+        top:20px;
+        position:absolute;
+    }
+    #banner{
+        width:100%;
+        
+
+    }
+    #layout{
+        display:block;
+        position: absolute;
+        width:100%;
+        left:25px;
+
+    }
+    #innerlayout{
+        border-radius:10px;
+        width:95%;
+    }
+    #models{
+        visibility: visible;    
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color:white;
+        width:100%;
+        position: absolute;
+        left:20px;
+    }
+
+
+}
+
+@media screen and  (max-width: 375px){
+    .topnav .icon{
+        display:block;
+        position:absolute;
+        top:0;
+        right:4px;
+        padding:25px;
+        visibility: visible;
+        font-size:large;
+        color:rgba(138, 4, 4, 0.986);
+    }
+    .topnav .logo a{
+        left:10px;
+        top:20px;
+        position:absolute;
+    }
+    #layout{
+        display:block;
+        position: absolute;
+        width:95%;
+        left:15px;
+        align-items: center;
+
+    }
+    #innerlayout{
+        border-radius:10px;
+        width:95%;
+    }
+    #models{
+        visibility: visible;    
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color:white;
+        width:100%;
+        position: absolute;
+        left:0;
+    }
+
+}
+@media screen and (min-width: 425px) and  (max-width: 767px) {
+    #layout{
+        display:block;
+        position: absolute;
+        width:100%;
+        left:15px;
+
+    }
+    #innerlayout{
+        border-radius:10px;
+        width:95%;
+        height:650px;
+    }
+    #innerlayout .imgcode{
+        left:40%;
+        position:absolute;
+    }
+
+
+}
+@media screen and (min-width: 768px) {
+    #layout{
+        display:flex;
+        flex-direction: row;
+        position: absolute;
+        width:100%;
+        left:4px;
+
+    }
+    #innerlayout{
+        border-radius:10px;
+        width:39%;
+        
+        
+    }
+    #innerlayout .imgcode{
+        left:40%;
+        position:absolute;
+    }
+    #models{
+        visibility: visible;    
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color:white;
+        width:65%;
+        position: absolute;
+        left:16%;
+    }
+
+}
+@media screen and (min-width: 1024px) {
+    #layout{
+        display:flex;
+        flex-direction: row;
+        position: absolute;
+        width:100%;
+        height:300px;
+        left:4px;
+
+    }
+    #innerlayout{
+        border-radius:10px;
+        width:33.33%;
+    }
+    #innerlayout .imgcode{
+        left:35%;
+        position:absolute;
+    }
+    #models{
+        visibility: visible;    
+        display:flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        background-color: white;
+        width:100%;
+        margin:0px;
+        position: absolute;
+        left:0;
+    }
+    
+
+
+
+}
+@media screen and (min-width: 1440px) {
+    #layout{
+        display:flex;
+        flex-direction: row;
+        position: absolute;
+        width:100%;
+        left:4px;
+
+    }
+    #innerlayout{
+        border-radius:3px;
+        width:25%;
+    }
+    #innerlayout .imgcode{
+        left:0;
+        position:absolute;
+    }
+
+}
+@media screen and (min-width: 2560px) {
+    #layout{
+        display:flex;
+        flex-direction: row;
+        position: absolute;
+        width:100%;
+        left:4px;
+
+    }
+    #innerlayout{
+        border-radius:10px;
+        width:20%;
+    }
+    #models{
+        visibility: visible;    
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        background-color:white;
+        width:100%;
+        position: absolute;
+        left:0;
+    }
+
+
+}
