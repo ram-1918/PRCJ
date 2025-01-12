@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<head>
+       <link href="{% static 'css/style1.css' %}" rel="stylesheet" type="text/css" media="screen"> 
+      
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+       <script>
+
+       </script>
+</head>
+<div class="haram_layout" id="layout"> 
+       {% if res %}
+       {% for i in res %}
+       {% for wished in i %}
+       <div class="haramin_layout" id="innerlayout" >
+              <img  src="{{wished.item_image.url}}" width='85%' height='85%'>
+              <div class="imgcode">
+                     <p> {{wished.item_id}}<b> {{wished.item_weight}}</b> </p>
+              </div>
+              {% if  haram.item_status %}
+              <div class="fav" style="top:0;right:0;position:absolute;padding:15px;">
+                    
+                            <button type="submit" onclick="change()" style="background-color:white;border-color:white;border:none"><i class="material-icons" style="font-size:24px;">&#xe87e;</i></button>
+                  
+              </div>
+              {% else %}
+              <div class="fav" style="top:0;right:0;position:absolute;padding:15px;">
+                            <button type="submit" onclick="change()" style="background-color:white;border-color:white;border:none"><i style="color:red;font-size:20px;" class="fa">&#xf004;</i></button>
+                    
+              </div>
+              {% endif %}
+
+  
+       </div> 
+       {% endfor %}
+       {% endfor %}
+       {% else %}
+       <h2>Your Wishlist is Empty</h2>
+       {% endif %}
+        
+</div>
+      
+{% endblock %}

@@ -1,0 +1,151 @@
+.topnav{
+    border-bottom:1px solid red;
+    padding:25px;
+    background-color: #ffffff;
+    font-family:Arial, Helvetica, sans-serif;
+    position:fixed;
+    width:100%;
+    text-decoration:none;
+    overflow: hidden;
+}
+#logo{
+    font-size:30px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif  ;
+    color:rgba(138, 4, 4, 0.986);
+    font-weight: bold;
+    text-shadow:1px 1px;
+    text-decoration: none;
+}
+.topnav a{
+    text-decoration: none;
+    color:black;
+    padding:25px 15px;
+    font-size: 15px;
+    float:left;
+}
+#ele:hover{
+    color:rgba(80, 12, 12, 0.856);
+    transition:0.5s;
+    opacity:0.7;
+    border-bottom:5px ridge rgba(163, 4, 4, 0.418);
+    text-decoration: none;
+}
+#topnav{
+    transition: 0.8s;
+    background: rgba(253, 253, 250, 0.986);
+    cursor:pointer;
+}
+.body{
+    padding:180px;
+    padding-top:120px;
+    overflow:hidden;
+    background-color: white;
+}
+.topnav .topnavin{
+    padding-left: 160px;
+    padding-right: 180px;
+}
+.models{
+    display:flex;
+    background-color: white;
+}
+.banglesec{
+    position: relative;
+    width: 300px;
+    height: 350px;
+    margin:10px;
+   }
+.harams{
+    position:relative;
+    width:800px;
+    height:350px;
+    margin:10px;
+    text-align:center;
+    background-color:white;
+    border:1px solid red;
+    border-radius:5px;
+}
+.harams p{
+    font-size:50px;
+    font-family:'Times New Roman', Times, serif;
+}
+.banglesec div{
+    position: absolute;
+    top:130px;
+    left:80px;
+    color: white;
+    margin-bottom: 5px;
+    font-family: sans-serif;
+    opacity: 0;
+    visibility: hidden;
+   }
+   .harams div{
+    position: absolute;
+    top:250px;
+    left:80%;
+    color: white;
+    margin-bottom: 5px;
+    font-family: sans-serif;
+    opacity: 0;
+    visibility: hidden;
+   }
+   
+.banglesec:hover, .harams:hover{
+    cursor: pointer;
+   }
+   
+.banglesec:hover div, .harams:hover div{
+    width: 150px;
+    padding: 8px 15px;
+    visibility: visible;
+    opacity: 0.8; 
+    color:black
+   }
+
+.banglesec:hover div button, .harams:hover div button{
+    font-size: 15px;
+    padding:10px;
+    background-color:navajowhite;
+    color:black;
+    border-radius:5px;
+   }
+.banglesec:hover div button:hover, .harams:hover div button:hover{
+       font-size:16px;
+       transition:0.7s;
+   }
+.haram_layout{
+    display:flex;
+    flex-wrap: wrap;
+    border-radius:10px;
+    margin-left:150px;
+    position:relative;
+    background-color: red;
+}
+.haram_layout .haramin_layout{
+       margin:10px;
+       background-color: #e9e3e3;
+       width:25%;
+       height:350px;
+       border:1px ridge darkgrey;
+       border-radius:10px;
+       box-shadow: 3px 3px;
+       text-align: center;
+       box-shadow: #ffffff;
+       position:relative;
+       cursor:pointer;
+     }
+
+.haramin_layout .imgcode{
+    position:absolute;
+    bottom:0;
+    left:90px;
+    color:rgb(155, 66, 3);
+    font-size: 17px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.haramin_layout:hover img{
+    width:87%;
+    height:87%;
+    transition:0.8s;
+
+}

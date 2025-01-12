@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<head>
+       <link href="{% static 'css/style1.css' %}" rel="stylesheet" type="text/css" media="screen"> 
+      
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+       <script>
+              function change(){
+
+              }
+       </script>
+</head>
+<div class="haram_layout" id="layout"> 
+       {% if res %}
+
+       {% for bangle in res %}
+       <div class="haramin_layout" id="innerlayout" >
+              <img  src="{{bangle.item_image.url}}" width='85%' height='85%'>
+              <div class="imgcode">
+                     <p> {{bangle.item_id}}<b> {{bangle.item_weight}}</b> </p>
+              </div>
+              {% if not haram.item_status %}
+              <div class="fav" style="top:0;right:0;position:absolute;padding:15px;">
+                     <form action="wishlists" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="item_id" value="{{haram.item_id}}">
+                            <input type="hidden" name="item_type" value="{{haram.item_type}}">
+                            <input type="hidden" name="pagename" value="banglefunc">
+                            <button type="submit" onclick="change()" style="background-color:inherit;border-color:white;border:none"><i class="material-icons" style="font-size:24px;">&#xe87e;</i></button>
+                     </form>
+              </div>
+              {% else %}
+              <div class="fav" style="top:0;right:0;position:absolute;padding:15px;">
+                     <form action="">
+                            <button type="submit" onclick="change()" style="background-color:inherit;border-color:white;border:none"><i style="color:red;font-size:20px;" class="fa">&#xf004;</i></button>
+                     </form>
+              </div>
+              {% endif %}
+
+  
+       </div> 
+       {% endfor %}
+       {% else %}
+       <h2>NO BANGLE MODELS TO SHOW</h2>
+       {% endif %}
+        
+</div>
+      
+{% endblock %}

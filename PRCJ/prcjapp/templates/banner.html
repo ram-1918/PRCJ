@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block banner %}
+<head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .banner{
+            width:100%;
+            height:520px;
+            position:relative;
+            
+        }
+        .slideimg{
+
+            display:none;
+        }
+
+        .active{
+            visibility: visible;
+            background-position: center;
+            background-size: cover;
+            
+        }
+        .banner .left{
+            opacity:1;
+            position:absolute;
+            top:50%;
+            left:0;
+        }
+        .banner .right{
+            opacity:1;
+            position:absolute;
+            top:50%;
+            right:0;
+        }
+        .banner .right i, .banner .left i{
+            font-size: 40px;
+            color:grey;
+            cursor:pointer;
+        }
+        .banner .span{
+            position:absolute;
+            bottom:0;
+            left:47%;
+            font-size:20px;
+            color:grey;
+            cursor: pointer;
+            transition: 0.8s;
+        }
+
+    </style>
+</head>
+<div class="banner" id="banner">
+    <div class="slideimg"><img src="{% static '/images/banner2.jpg'%}" width='100%' height='520px'></div>
+    <div class="slideimg" ><img src="{% static '/images/ring.jpg'%}" width='100%' height='520px'></div>
+    <div class="slideimg" ><img src="{% static '/images/bangle banner.jpg'%}" width='100%' height='520px'></div>
+    <div class="left" id="left" onclick="moveleft()"><i class="material-icons">&#xe314;</i></div>
+    <div class="right" id="right"  style="float:right" onclick="moveright()"><i class="material-icons">&#xe315;</i></div>
+<div class="span">
+    <span class="dots" onclick="toBanner(1)"><span class="glyphicon">&#x2212;</span></span>
+    <span class="dots" onclick="toBanner(2)"><span class="glyphicon">&#x2212;</span></span>
+    <span class="dots" onclick="toBanner(3)"><span class="glyphicon">&#x2212;</span></span>
+</div>
+</div>
+<script>
+    var left=document.getElementById("left");
+    var right=document.getElementById("right");
+    var slides=document.querySelectorAll(".slideimg");
+    var dots=document.querySelectorAll(".dots");
+    let activeslide=0;
+    dots[activeslide].style.color="white";
+    autobanner();
+    function autobanner(){
+        setBanner();
+        moveright();
+        setTimeout(autobanner,3000);
+    }
+    function toBanner(val){
+        slides[activeslide].classList="slideimg";
+        dots[activeslide].style.color="grey";
+        activeslide=val-1;
+        setBanner();
+    }
+    function moveleft(){
+        
+        dots[activeslide].style.color="grey";
+        slides[activeslide].classList="slideimg";
+        activeslide--
+        if(activeslide<0){
+            activeslide=slides.length-1;
+        }
+        setBanner();
+    }
+    function moveright(){
+        
+        dots[activeslide].style.color="grey";
+        slides[activeslide].classList="slideimg";
+        activeslide++
+        if(activeslide>slides.length-1){
+            activeslide=0
+        }
+        setBanner();
+    }
+    function setBanner(){
+        slides[activeslide].classList.replace("slideimg","active");
+        dots[activeslide].style.color="white";
+        
+    }
+</script>
+
+
+{% endblock%}

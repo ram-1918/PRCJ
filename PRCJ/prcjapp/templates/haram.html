@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<head>
+       <link href="{% static 'css/style1.css' %}" rel="stylesheet" type="text/css" media="screen"> 
+           
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <style>
+              .fared{
+                     color: red;
+                   }
+            </style>
+            
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script type="text/javascript">
+   
+              //function myFunction(x) {
+
+                 //    x.classList.toggle("fared");
+               //}
+                   $(document).ready(function(){
+
+                     $('.like-btn').on('click', function(){
+                     
+                            alert("in");
+                       var post_id = $(this).data('id');
+                       //var post_type = $(this).data('type');
+                      // var username = $(this).val();
+                       alert("username");
+                       $clicked_btn = $(this);
+                       if ($clicked_btn.hasClass('fa-heart fared')) {
+                              action = 'like';
+                              var url = "/wishlists/False";
+                              
+                       } else if($clicked_btn.hasClass('fa-heart')){
+                              action = 'unlike';
+                              var url = "/wishlists/True";
+                       }
+                       //var arg="HI";
+                       $.ajax({
+                              
+                              url:url,
+                             // type:"GET",
+                              data: {
+                                     'action': action,
+                                     'post_id': post_id,
+                              },
+                              success: function(data){
+                                     alert(post_id);
+                                     //res = JSON.parse(data);
+                                     $('.wishlists').append(data)
+                                     alert(action);
+                                     if (action == 'like') {
+                                            alert("colorin");
+                                            $clicked_btn.removeClass('fa-heart fared');
+                                            $clicked_btn.addClass('fa-heart');
+                                     } else if(action == 'unlike') {
+                                          alert("colorin");
+                                            $clicked_btn.removeClass('fa-heart');
+                                            $clicked_btn.addClass('fa-heart fared');
+                                     }
+                            
+                              }
+                       });		
+                     
+                     });
+                     
+                     });
+              </script>
+       
+
+</head>
+<div class="haram_layout" id="layout"> 
+       {% if res %}
+       {% for haram in res %}
+       <div class="haramin_layout" id="innerlayout" >
+              <img  src="{{haram.item_image.url}}" width='85%' height='85%'>
+              <div class="imgcode">
+                     <p> {{haram.item_id}}<b> {{haram.item_weight}}</b> </p>
+              </div>
+              <div class="fav" style="top:0;right:0;position:absolute;padding:15px;">
+                     <i {% if not haram.item_status %} {% with var1=True %}{% endwith %} class="fa fa-heart like-btn" {% else %} {% with var2=False %}{% endwith %} class="fa fa-heart fared like-btn" {% endif %} style="font-size: 15px;"  value="{{haram.item_type}}" data-type="{{haram.item_type}}" data-id="{{haram.item_id}}"></i>
+              </div>
+       </div> 
+       {% endfor %}
+       {% else %}
+       <h2>NO BANGLE MODELS TO SHOW</h2>
+       {% endif %}
+        
+</div>
+      
+{% endblock %}

@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<head>
+    {% load static %}  
+    <link href="{% static 'css/style1.css' %}" rel="stylesheet"> 
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+      function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
+
+
+      function uuidv4(){
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c){
+          var r=Math.random()*16|0,v=c=='x'?r:( r & 0x3 | 0x8);
+          return v.toString(16)
+        });
+      }
+
+
+
+      let device= getCookie('device')
+
+      if (device== null || device==undefined){
+        device=uuidv4()
+      }
+      document.cookie='device=' +device + ";domain=;path=/"
+
+
+
+
+
+
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+          if (prevScrollpos > currentScrollPos) {
+            document.getElementById("topnav").style.top = "0";
+          } else {
+            document.getElementById("topnav").style.top = "-100";
+          }
+          prevScrollpos = currentScrollPos;
+        }
+
+        function func(){
+          var top=document.getElementById("topnav");
+          
+          var models=document.getElementById("models");
+          if (top.className ==="fullbody" ){
+            //alert("if");
+            top.className+="bar";
+            models.className+="media";
+          }
+          else{
+            //alert("else");
+            top.className="fullbody";
+            
+            models.className="models";
+            
+          }
+        }
+        function check(){
+         //alert("check");
+          var top=document.getElementById("topnav");
+          var models=document.getElementById("models");
+          var x=window.matchMedia("(max-width: 800px)");
+          if(!x.matchs && top.className !="fullbody"){
+              //alert("modeltop");
+              top.className="fullbody";
+              models.className="models";
+          }
+        }
+
+
+
+
+
+    </script> 
+</head>
+<body class="fullbody" id="topnav" onresize="check()"  >
+<div class="topnav" >
+    <div class="logo">
+        <a href="{% url 'base' %}">PRCJ</a>
+    </div>
+    <div class="elements">
+      <a href="/" >HOME</a>
+      <div class="dropdown">
+        <button class="ddbut">MODELS</button>
+        <div class="ddelements">
+          <a href="" >RINGS</a>
+          <a href="" >NECKLACES</a>
+          <a href="" >HANGINGS</a>
+          <a href="" >CHAINS</a>
+          <a href="" >BRACELETS</a>
+      </div>
+      </div>
+      <a href="display" > WISHLIST</a>
+      <a href="" > CONTACT</a>
+      {% if registered %}
+      
+      <a href="" style="color:red;right:20px;position:absolute;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-size:14px"> LOGOUT</a>
+      <a href='' style="color:green;right:100px;position:absolute;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-size:15px">Welcome, {{user}}</a>
+      {% else %}
+      <a href="login"> LOGIN</a>
+      <a href="register" > REGISTER</a>
+      {% endif %}
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="func()"><i class="fa fa-bars"></i></a>
+</div>
+    <div class="after" style="background-color: white;">
+      <div class="afterbody">
+      <div class="newlogo">
+        <a href="">PRCJ</a>
+    </div>
+    <div class="newelements">
+      <a href="" >RINGS</a>
+      <a href="" >NECKLACES</a>
+      <a href="" >HANGINGS</a>
+      <a href="" >CHAINS</a>
+      <a href="" >BRACELETS</a>
+      <a href="" > WISHLIST</a>
+      <a href="" > CONTACT</a>
+    </div>
+    <a href="javascript:void(0);" class="newicon" onclick="func()">
+      <i class="material-icons">close</i></a>
+  </div>
+  </div>
+    
+
+{% block banner %}
+
+
+{% endblock %}
+
+<div class="body" >
+
+  {% block content %}
+
+
+  {% endblock %}
+
+</div>
+</body>
+
+</html>
